@@ -38,10 +38,7 @@
     "/docs"
   ],
   "lint-staged": {
-    "*.js": [
-      "prettier --config .prettierrc.js --write",
-      "git add"
-    ]
+    "*.js": ["eslint"]
   },
   "husky": {
     "hooks": {
