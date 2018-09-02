@@ -19,17 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{user}}/{{project}}.git"
+    "url": "git+https://github.com/{{author}}/{{project}}.git"
   },
   "keywords": [
     "TODO"
   ],
-  "author": "{{user}}",
+  "author": "{{author}}",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/{{user}}/{{project}}/issues"
+    "url": "https://github.com/{{author}}/{{project}}/issues"
   },
-  "homepage": "https://github.com/{{user}}/{{project}}#readme",
+  "homepage": "https://github.com/{{author}}/{{project}}#readme",
   "files": [
     "/bin",
     "/src",

@@ -7,7 +7,7 @@ const ora = require('ora');
 async function handleExit() {
 	const spiner = ora('do clean up...\n').start();
 	try {
-		await cleaner.cleanup();
+		await cleaner.cleanUp();
 		spiner.succeed('clean up done.');
 	} catch (e) {
 		log.error(`Clean up failed. Error message: ${e.message}`);
@@ -22,7 +22,7 @@ async function handleError(e) {
 	console.error(chalk.red(e.stack));
 	const spiner = ora('do clean up...\n').start();
 	try {
-		await cleaner.cleanup();
+		await cleaner.cleanUp();
 		spiner.succeed('clean up done.');
 	} catch (err) {
 		log.error(`Clean up failed. Error message: ${e.message}`);

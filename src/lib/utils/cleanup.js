@@ -5,7 +5,7 @@ const cleaner = {
 	setState() {
 		console.log('收集要清理的内容');
 	},
-	async cleanup() {
+	async cleanUp() {
 		console.log('clean up');
 	}
 };
