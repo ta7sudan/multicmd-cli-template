@@ -6,7 +6,8 @@ async function dulu({
 	ora,
 	template,
 	inquirer,
-	chalk
+	chalk,
+	project
 }) {
 	debugger;
 	throw new Error();

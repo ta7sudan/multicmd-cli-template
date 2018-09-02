@@ -11,7 +11,7 @@ const handleError = require('./lib/utils/error-handler');
 /**
  * DEBUG
  */
-const sleep = require('./lib/utils/sleep');
+const {sleep} = require('./lib/utils');
 global.sleep = sleep;
 
 (async () => {
@@ -20,7 +20,7 @@ global.sleep = sleep;
 	yargonaut
 		.helpStyle('blue.underline')
 		.style('red.bold', 'required')
-		.style('magenta', ['boolean', 'string', 'number']);
+		.style('magenta', ['boolean', 'string']);
 
 	yargs
 		.scriptName(cmdName)
@@ -28,11 +28,12 @@ global.sleep = sleep;
 		.recommendCommands()
 		.completion('completion', 'get completion script')
 		.alias('h', 'help')
-		.example(`${cmdName} todo`, 'todo')
+		.example(`${cmdName} todo`, 'TODO')
 		.usage(chalk.yellowBright(logo))
 		.version(version)
 		.help()
 		.fail((msg, err, yargs) => {
+			// 这个坑爹东西会捕获掉所有同步异常
 			if (err) {
 				handleError(err);
 			} else {
@@ -42,6 +43,7 @@ global.sleep = sleep;
 
 	const argv = yargs.argv;
 
+	// 没有参数或子命令就显示help
 	if (!argv._.length) {
 		yargs.showHelp();
 	}

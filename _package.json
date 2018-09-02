@@ -1,7 +1,7 @@
 {
-  "name": "{{projectName}}",
+  "name": "{{project}}",
   "version": "0.1.0",
-  "description": "Scaffolding tool for my development",
+  "description": "{{desc}}",
   "main": "src/index.js",
   "bin": {
     "{{cmd}}": "./bin/index.js"
@@ -19,18 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{user}}/{{projectName}}.git"
+    "url": "git+https://github.com/{{user}}/{{project}}.git"
   },
   "keywords": [
-    "scaffolding",
-    "cli"
+    "TODO"
   ],
   "author": "{{user}}",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/{{user}}/{{projectName}}/issues"
+    "url": "https://github.com/{{user}}/{{project}}/issues"
   },
-  "homepage": "https://github.com/{{user}}/{{projectName}}#readme",
+  "homepage": "https://github.com/{{user}}/{{project}}#readme",
   "files": [
     "/bin",
     "/src",
@@ -57,7 +56,6 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "figlet": "^1.2.0",
-    "fs-extra": "^7.0.0",
     "ora": "^3.0.0",
     "semver": "^5.5.1",
     "signale": "^1.2.1",

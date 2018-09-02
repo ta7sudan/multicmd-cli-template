@@ -1,18 +1,12 @@
-// TODO
 'use strict';
-const fs = require('fs-extra');
-
 
 const cleaner = {
-	todo: '',
-	set(key, value) {
-		if (Object.prototype.hasOwnProperty.call(this, key)) {
-			this[key] = value;
-		}
+	state: [],
+	setState() {
+		console.log('收集要清理的内容');
 	},
 	async cleanup() {
-		// TODO
-		await fs.remove();
+		console.log('clean up');
 	}
 };
 

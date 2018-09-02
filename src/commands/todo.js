@@ -1,22 +1,25 @@
 'use strict';
 const {name: cmdName} = require('../../package');
 
-const todo = {
+const create = {
 	command: 'todo <required> [options]',
-	desc: 'todo',
+	desc: 'TODO',
 	builder(yargs) {
 		return yargs
 			.option('t', {
-				alias: 'todo',
-				describe: 'todo',
-				boolean: true,
-				default: false
+				alias: 'TODO',
+				describe: 'TODO',
+				string: true,
+				default: ''
 			})
-			.example(`${cmdName} todo`, 'todo');
+			.example(
+				`${cmdName} todo -t`,
+				'TODO'
+			);
 	},
-	async handler(argv) {
-		console.log('todo');
+	handler(argv) {
+		console.log('TODO', argv);
 	}
 };
 
-module.exports = todo;
+module.exports = create;

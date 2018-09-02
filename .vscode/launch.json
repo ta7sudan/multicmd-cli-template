@@ -7,12 +7,10 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Debug todo",
+			"name": "Debug TODO",
 			"program": "${workspaceFolder}/bin/index.js",
 			"args": [
-				"todo",
-				"-t",
-				"test"
+				"TODO"
 			]
 		},
 		{

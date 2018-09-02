@@ -63,10 +63,7 @@ module.exports = {
 			}
 		],
 		radix: 'warn',
-		strict: [
-			'error',
-			'global'
-		],
+		strict: ['error', 'global'],
 		'space-before-function-paren': [
 			'error',
 			{
@@ -75,9 +72,6 @@ module.exports = {
 				asyncArrow: 'always'
 			}
 		],
-		'arrow-parens': [
-			'error',
-			'as-needed'
-		]
+		'arrow-parens': ['error', 'as-needed']
 	}
 };
