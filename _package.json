@@ -55,10 +55,8 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    {{each dependencies pkg}}
-    {{$pkg}},
-    {{/each}}
-    "figlet": "^1.2.0",
+    {{each dependencies $pkg}}{{@$pkg}},
+    {{/each}}"figlet": "^1.2.0",
     "ora": "^3.0.0",
     "semver": "^5.5.1",
     "signale": "^1.2.1",
