@@ -1,5 +1,5 @@
 'use strict';
-const {name: cmdName} = require('../../package');
+const {getCmds} = require('../lib/utils');
 
 const create = {
 	command: 'todo <required> [options]',
@@ -13,7 +13,7 @@ const create = {
 				default: ''
 			})
 			.example(
-				`${cmdName} todo -t`,
+				`${getCmds()[0]} todo -t`,
 				'TODO'
 			);
 	},
