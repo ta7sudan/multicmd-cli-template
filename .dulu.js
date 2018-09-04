@@ -40,21 +40,46 @@ module.exports = function(projectName) {
 				type: 'checkbox',
 				message: 'Choose dependencies',
 				choices: [
-					'fs-extra',
-					'inquirer',
-					'cli-table',
-					'request',
-					'shelljs',
-					'dotenv-safe',
-					'figures',
-					'tiny-glob',
-					'memfs',
-					'chokidar'
+					{
+						name: 'Inquirer.js',
+						value: '"inquirer": "^6.2.0"'
+					},
+					{
+						name: 'fs-extra',
+						value: '"fs-extra": "^7.0.0"'
+					},
+					{
+						name: 'shelljs',
+						value: '"shelljs": "^0.8.2"'
+					},
+					{
+						name: 'request',
+						value: '"request": "^2.88.0"'
+					},
+					{
+						name: 'got',
+						value: '"got": "^9.2.0"'
+					},
+					{
+						name: 'chokidar',
+						value: '"chokidar": "^2.0.4"'
+					},
+					{
+						name: 'fast-glob',
+						value: '"fast-glob": "^2.2.2"'
+					},
+					{
+						name: 'execa',
+						value: '"execa": "^1.0.0"'
+					},
+					{
+						name: 'cross-spawn',
+						value: '"cross-spawn": "^6.0.5"'
+					}
 				]
 			}
 		],
 		complete(answers) {
-			debugger;
 			const {needNpmrc} = answers,
 				excludes = ['.dulu.js'],
 				templates = ['_package.json', 'man/doc.1'],
