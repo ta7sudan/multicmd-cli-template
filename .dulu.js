@@ -24,6 +24,12 @@ module.exports = function(projectName) {
 				default: 'A multicmd cli project'
 			},
 			{
+				name: 'keywords',
+				type: 'input',
+				message: 'Keywords',
+				default: 'cli'
+			},
+			{
 				name: 'cmd',
 				type: 'input',
 				message: 'Command name',
@@ -86,7 +92,8 @@ module.exports = function(projectName) {
 				transform = {
 					'_package.json': 'package.json'
 				};
-
+			answers.keywords = answers.keywords ? answers.keywords.split(/\s+/) : [];
+			
 			if (!needNpmrc) {
 				excludes.push('.npmrc');
 			}
