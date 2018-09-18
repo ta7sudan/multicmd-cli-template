@@ -6,7 +6,7 @@ const cleaner = {
 		console.log('收集要清理的内容');
 	},
 	async cleanUp() {
-		console.log('clean up');
+		console.log('todo');
 	}
 };
 
