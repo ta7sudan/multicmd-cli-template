@@ -4,9 +4,13 @@ require('./lib/utils/safe-promise');
 const yargs = require('yargs');
 const yargonaut = require('yargonaut');
 const chalk = require('chalk');
-const handleError = require('./lib/utils/error-handler');
 const {version} = require('../package');
+const {handleError, handleExit} = require('./lib/utils/error-handler');
 const {getCmds, getFiglet} = require('./lib/utils');
+
+process.addListener('SIGINT', handleExit);
+process.addListener('SIGTERM', handleExit);
+process.addListener('uncaughtException', handleError);
 
 (async () => {
 	const cmdName = getCmds()[0],
@@ -25,7 +29,7 @@ const {getCmds, getFiglet} = require('./lib/utils');
 		.alias('h', 'help')
 		.alias('v', 'version')
 		.example(`${cmdName} todo`, 'TODO')
-		.usage(chalk.yellowBright(logo))
+		.usage(`${chalk.yellowBright(logo)}\n\n${chalk.blue.underline('Usage:')} ${cmdName} <command> [options]`)
 		.version(version)
 		.help()
 		.fail((msg, err, yargs) => {
