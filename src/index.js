@@ -4,7 +4,7 @@ require('./lib/utils/safe-promise');
 const yargs = require('yargs');
 const yargonaut = require('yargonaut');
 const chalk = require('chalk');
-const {version} = require('../package');
+const {version, author} = require('../package');
 const {handleError, handleExit} = require('./lib/utils/error-handler');
 const {getCmds, getFiglet} = require('./lib/utils');
 
@@ -31,6 +31,7 @@ process.addListener('uncaughtException', handleError);
 		.example(`${cmdName} todo`, 'TODO')
 		.usage(`${chalk.yellowBright(logo)}\n\n${chalk.blue.underline('Usage:')} ${cmdName} <command> [options]`)
 		.version(version)
+		.epilog(`By ${author}`)
 		.help()
 		.fail((msg, err, yargs) => {
 			// 这个坑爹东西会捕获掉所有同步异常, 子命令的fail还会向上一级命令的fail冒泡
