@@ -31,14 +31,16 @@ process.addListener('uncaughtException', handleError);
 		.alias('h', 'help')
 		.alias('v', 'version')
 		.example(`${cmdName} todo`, 'TODO')
-		.usage(`${chalk.yellowBright(logo)}\n\n${chalk.blue.underline('Usage:')} ${cmdName} <command> [options]`)
+		.usage(`${chalk.yellowBright(logo)}\n\n${chalk.blue.underline('Usage:')}\n  `
+		+ `${cmdName} <command> [options]`)
 		.version(version)
 		.epilog(`By ${authorName}`)
 		.help()
-		.fail((msg, err, yargs) => {
+		// 尽量不要用async函数, 不过这里用用也没事
+		.fail(async (msg, err, yargs) => {
 			// 这个坑爹东西会捕获掉所有同步异常, 子命令的fail还会向上一级命令的fail冒泡
 			if (err) {
-				handleError(err);
+				await handleError(err);
 			} else {
 				// 处理子命令不带参数
 				yargs.showHelp();
