@@ -4,6 +4,7 @@ const path = require('path');
 const os = require('os');
 const {bin} = require('../../../package');
 const logger = require('./logger');
+const cleaner = require('./cleaner');
 
 const TODO_DIR = path.resolve(os.homedir(), '.todo');
 
@@ -38,3 +39,4 @@ exports.logger = logger;
 
 exports.TODO_DIR = TODO_DIR;
 
+exports.cleaner = cleaner;
