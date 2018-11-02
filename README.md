@@ -1,4 +1,4 @@
-# multicmd-cli-template
+# {{project}}
 A multi-command CLI template for dulu
 
 
