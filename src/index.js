@@ -10,10 +10,10 @@ const {getCmds, getFiglet} = require('./lib/utils');
 
 const authorName = typeof author === 'string' ? author : author.name;
 
-process.addListener('SIGHUP', handleSignal);
-process.addListener('SIGQUIT', handleSignal);
-process.addListener('SIGINT', handleSignal);
-process.addListener('SIGTERM', handleSignal);
+process.once('SIGHUP', handleSignal);
+process.once('SIGQUIT', handleSignal);
+process.once('SIGINT', handleSignal);
+process.once('SIGTERM', handleSignal);
 process.addListener('uncaughtException', handleError);
 
 (async () => {
